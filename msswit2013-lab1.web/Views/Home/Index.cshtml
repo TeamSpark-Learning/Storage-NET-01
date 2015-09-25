@@ -1,0 +1,15 @@
+﻿@model string
+
+@{
+    ViewBag.Title = "Online shop";
+    Layout = "~/Views/Home/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<table>
+	<tr>
+		<td valign="top">@{ Html.RenderAction("CategoriesList"); }</td>
+		<td valign="top">@{ Html.RenderAction("GoodsList", new { id = Model }); }</td>
+	</tr>
+</table>

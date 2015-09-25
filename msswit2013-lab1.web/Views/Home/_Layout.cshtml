@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+	<body>
+		<table>
+			<tr>
+				<td>@Html.ActionLink("go to admin site", "Index", "Admin")</td>
+			</tr>
+		</table>
+		<div>
+			@RenderBody()
+		</div>
+	</body>
+</html>

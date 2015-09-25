@@ -1,0 +1,26 @@
+﻿@model List<msswit2013_lab1.core.Table.Entry.Good>
+
+@{
+	ViewBag.Title = "Goods list";
+	Layout = "~/Views/Admin/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Price</th>
+	</tr>
+	@foreach (var good in Model)
+	{
+		<tr>
+			<td>@good.Title</td>
+			<td>@good.Price</td>
+			<td>@Html.ActionLink("edit", "GoodEntry", new { goodId = good.RowKey })</td>
+			<td>@Html.ActionLink("delete", "GoodDelete", new { id = good.RowKey })</td>
+		</tr>
+	}
+</table>
+
+@Html.ActionLink("new", "GoodEntry", new { categoryId = ViewData["categoryId"] })

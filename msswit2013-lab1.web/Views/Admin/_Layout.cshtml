@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+	<body>
+		<table>
+			<tr>
+				<td>@Html.ActionLink("go to client site", "Index", "Home")</td>
+				<td>@Html.ActionLink("go to categories", "CategoriesList", "Admin")</td>
+			</tr>
+		</table>
+		<div>
+			@RenderBody()
+		</div>
+	</body>
+</html>

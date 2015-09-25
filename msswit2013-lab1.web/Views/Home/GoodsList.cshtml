@@ -1,0 +1,17 @@
+﻿@model List<msswit2013_lab1.web.Models.GoodModel>
+
+<table>
+	<tr>
+		<th>Image</th>
+		<th>Title</th>
+		<th>Price</th>
+	</tr>
+	@foreach (var good in Model)
+	{
+		<tr>
+			<th><img src="@good.Image"/></th>
+			<th>@good.Title</th>
+			<th>@good.Price</th>
+		</tr>
+	}
+</table>

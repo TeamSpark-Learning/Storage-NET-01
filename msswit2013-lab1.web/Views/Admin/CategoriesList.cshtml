@@ -1,0 +1,25 @@
+﻿@model List<msswit2013_lab1.core.Table.Entry.Category>
+
+@{
+	ViewBag.Title = "Categories list";
+	Layout = "~/Views/Admin/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<table>
+	<tr>
+		<th>Title</th>
+	</tr>
+	@foreach (var cat in Model)
+	{
+		<tr>
+			<td>@cat.Title</td>
+			<td>@Html.ActionLink("goods", "GoodsList", new { id = cat.RowKey })</td>
+			<td>@Html.ActionLink("edit", "CategoryEntry", new { id = cat.RowKey })</td>
+			<td>@Html.ActionLink("delete", "CategoryDelete", new { id = cat.RowKey })</td>
+		</tr>
+	}
+</table>
+
+@Html.ActionLink("new", "CategoryEntry")

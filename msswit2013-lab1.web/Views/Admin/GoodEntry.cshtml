@@ -1,0 +1,32 @@
+﻿@model msswit2013_lab1.core.Table.Entry.Good
+
+@{
+	ViewBag.Title = "Good entry";
+	Layout = "~/Views/Admin/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("GoodEntry", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+	<div>
+		@Html.ValidationSummary()
+	</div>
+	@Html.HiddenFor(m => Model.PartitionKey)
+	@Html.HiddenFor(m => Model.RowKey)
+	<table>
+		<tr>
+			<th>@Html.LabelFor(m => Model.Title)</th>
+			<td>@Html.EditorFor(m => Model.Title)</td>
+		</tr>
+		<tr>
+			<th>@Html.LabelFor(m => Model.Price)</th>
+			<td>@Html.EditorFor(m => Model.Price)</td>
+		</tr>
+		<tr>
+			<th>Image</th>
+			<td><input type="file" id="cover" name="cover"/></td>
+		</tr>
+	</table>
+	<input type="submit" value="submit"/>
+}

@@ -1,0 +1,8 @@
+﻿@model List<msswit2013_lab1.core.Table.Entry.Category>
+
+<ul>
+	@foreach (var cat in Model)
+	{
+		<li>@Html.ActionLink(cat.Title, "Category", new { id = HttpUtility.UrlEncode(cat.RowKey) })</li>
+	}
+</ul>
